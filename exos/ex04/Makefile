@@ -1,26 +1,28 @@
-SRCS := count_number.c \
-        main.c \
+SRCSu := count_number.c \
         print_hello.c
+        
+SRCSm := main.c 
 
 SRCSDIR = srcs/
+SRCSDIRm = main/
+SRCSDIRu = utils/
 OBJSDIR = objs/
 INCLUDES = -I includes
-SRCS := $(addprefix $(SRCSDIR), $(SRCS))
+SRCS := $(addprefix $(SRCSDIR)$(SRCSDIRu), $(SRCSu)) \
+		$(addprefix $(SRCSDIR)$(SRCSDIRm), $(SRCSm))
 
-
-OBJS := $(SRCS:$(SRCSDIR)%.c=$(OBJSDIR)%.o)
+OBJS = $(subst $(SRCSDIR), $(OBJSDIR), $(SRCS:.c=.o))
 
 NAME = test
 
 all: $(NAME)
 
-$(OBJSDIR):
-	mkdir -p $@
 
 $(NAME): $(OBJS)
 	cc $^ -o $@
 
-$(OBJSDIR)%.o: $(SRCSDIR)%.c  $(OBJSDIR)
+$(OBJSDIR)%.o: $(SRCSDIR)%.c 
+	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
