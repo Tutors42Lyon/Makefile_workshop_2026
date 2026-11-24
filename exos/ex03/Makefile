@@ -12,3 +12,6 @@ srcs/main.o: srcs/main.c
 
 clean:
 	rm -rf srcs/*.o
+
+fclean: clean
+	rm -rf test
