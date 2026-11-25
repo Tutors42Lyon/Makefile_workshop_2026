@@ -1,17 +1,22 @@
 # Makefile_workshop_2026
 
+SOMMAIRE DU PDF
+
+
 1) Utilité du makefile / histoire 
-2) Makefile
-	1) cible / dépendance / commande
-	2) ordre d'excution
-		1) cible
-		2) dependance
-		3) commande
-	3) organisation/structure du fichier 
-	x) règles automatique
-	x) macros et operateur d'assignement
-	x) fonction manipulation de string
-	x) rules matching
-	x) regles implicit
-	x) PHONY
-	x) generer les .d pour mieux gérer les dépendances
+2) cible / dépendance / commande
+3) ordre d'execution
+	1) cible
+	2) dependance
+	3) commande
+4) organisation
+	1) structure du fichier
+	2) Variables
+	3) addprefix
+	4) dir
+	5) subst
+5) Correspondance de regles
+6) regles implicites
+7) Directive include
+8) fichiers de dépendances (.d)
+9) .PHONY, .DFAULT_GOAL, $(MAKE), MAKEFLAGS, @, patsubst...
