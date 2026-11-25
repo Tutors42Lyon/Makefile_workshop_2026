@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../includes/exo.h"
+#include "exo.h"
 
 int main(int ac, char **av) {
 	int len_str;
