@@ -2,7 +2,7 @@ remove_garbage:
 	rm -rf srcs/garbage*
 
 clean: remove_garbage
-	@echo "Everything cleaned, make restore to restore the session"
+	@echo "Check in srcs if every garbagesX are deleted. make restore to restore the session"
 
 restore:
 	touch srcs/garbage1
